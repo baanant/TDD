@@ -41,6 +41,12 @@ namespace TDDTesting
            
         }
 
+        [Test, Ignore]
+        public void MoneyBag_CalculateMoneyInEur_Failure()
+        {
+
+        }
+
         [Test]
         public void MoneyBag_GetLatestAddedMoney_Success()
         {
