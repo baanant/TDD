@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDTesting", "TDDTesting\TDDTesting.csproj", "{5B24F7B7-41F0-406A-8C9E-F5E67369FA69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTests", "NUnitTests\NUnitTests.csproj", "{0CB42B6D-639A-444A-945E-D2468FBCDB4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyBag", "MoneyBag\MoneyBag.csproj", "{9752D01F-46B5-4513-8C40-81DC566B005C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{5B24F7B7-41F0-406A-8C9E-F5E67369FA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B24F7B7-41F0-406A-8C9E-F5E67369FA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B24F7B7-41F0-406A-8C9E-F5E67369FA69}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CB42B6D-639A-444A-945E-D2468FBCDB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CB42B6D-639A-444A-945E-D2468FBCDB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CB42B6D-639A-444A-945E-D2468FBCDB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CB42B6D-639A-444A-945E-D2468FBCDB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9752D01F-46B5-4513-8C40-81DC566B005C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9752D01F-46B5-4513-8C40-81DC566B005C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9752D01F-46B5-4513-8C40-81DC566B005C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9752D01F-46B5-4513-8C40-81DC566B005C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
