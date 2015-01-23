@@ -8,7 +8,7 @@ namespace MoneyBagImplementation
 {
     public interface IMoney
     {
-        Currency Currency { get; set; }
+        ICurrency Currency { get; set; }
 
         decimal Amount { get; set; }
     }

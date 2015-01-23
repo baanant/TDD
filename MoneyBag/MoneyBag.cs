@@ -24,19 +24,10 @@ namespace MoneyBagImplementation
             this.lastAdded = moneys.ToList().Last();
         }
 
-
-
-
-
-
         public IMoney GetLatestDeposit()
         {
             return this.lastAdded;
         }
-
-
-        
-
 
         public bool DepositMoney(IMoney money)
         {
@@ -66,6 +57,29 @@ namespace MoneyBagImplementation
         public decimal WithdrawMoney(IMoney money)
         {
             throw new NotImplementedException();
+        }
+
+
+
+        public IMoney CalculateMoneyInCurrency(ICurrency curr)
+        {
+            var rateAcceptable = curr.IsRateAcceptable(); //Crashes, to create POC of MOQ.
+            if (!rateAcceptable) return null;
+            return new Money(curr, GetTotalAmount());
+        }
+
+
+
+        private decimal GetTotalAmount()
+        {
+
+            decimal total = 0.0m;
+            foreach(Money money in moneyBag)
+            {
+                total += money.Amount;
+            }
+
+            return total;
         }
     }
 }

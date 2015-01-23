@@ -9,6 +9,8 @@ namespace MoneyBagImplementation
     public class Currency:ICurrency 
     {
 
+        public Currency() { }
+
         public Currency(string identifier, string description)
         {
             this.Identifier = identifier;
@@ -19,6 +21,12 @@ namespace MoneyBagImplementation
 
         public string Description { get; set; }
 
-       
+
+
+
+        public bool IsRateAcceptable()
+        {
+            throw new NotImplementedException("This is not implemented yet!");
+        }
     }
 }

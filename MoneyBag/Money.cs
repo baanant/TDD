@@ -18,11 +18,11 @@ namespace MoneyBagImplementation
 
         public Money(ICurrency curr, decimal amount)
         {
-            this.Currency = (Currency)curr;
+            this.Currency = curr;
             this.Amount = amount;
         }
 
-        public Currency Currency { get; set; }
+        public ICurrency Currency { get; set; }
 
         public decimal Amount { get; set; }
     }

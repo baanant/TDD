@@ -14,6 +14,8 @@ namespace MoneyBagImplementation
         decimal WithdrawMoney(IMoney money);
 
         bool DepositMoney(IMoney money);
+
+        IMoney CalculateMoneyInCurrency(ICurrency curr);
         
 
     }

@@ -11,5 +11,7 @@ namespace MoneyBagImplementation
         string Description { get; set; }
 
         string Identifier { get; set; }
+
+        bool IsRateAcceptable();
     }
 }

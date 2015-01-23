@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MoneyBagImplementation;
 using NUnit.Framework;
 using FluentAssertions;
+using Moq;
 
 namespace TDDTesting
 {
@@ -14,7 +15,7 @@ namespace TDDTesting
     {
 
         [Test]
-        public void MoneyBag_DepositMoneyToMoneyBag_Success()
+        public void MoneyBag_DepositMoney_Success()
         {
             
             IMoneyBag bag = new MoneyBag();
@@ -31,24 +32,35 @@ namespace TDDTesting
         {
             IMoneyBag bag = new MoneyBag();
             IMoney money = new Money();
-            bag.WithdrawMoney(money);
+            decimal withdrawed = bag.WithdrawMoney(money);
         }
 
 
-        [Test,Ignore]
-        public void MoneyBag_CalculateMoneyInEur_Success()
+        [Test]
+        public void MoneyBag_CalculateMoneyInCurrency_Success()
         {
-           
-        }
+            //Let's utilize MOQ here. Let's bypass CalculateMoneyInCurrency method's IsRateAcceptable line.
+            var mockedCurr = new Mock<ICurrency>();
+            mockedCurr.Setup(x => x.IsRateAcceptable()).Returns(true);
 
-        [Test, Ignore]
-        public void MoneyBag_CalculateMoneyInEur_Failure()
-        {
+            IMoneyBag bag = new MoneyBag(); //Empty MoneyBag.
 
+            //Now, while using mocked Currency object, its IsRateAcceptableMethod should not throw NotImplementedException.
+            bag.CalculateMoneyInCurrency(mockedCurr.Object).Should().BeOfType<Money>().Which.Amount.Should().Be(0.00m);          
         }
 
         [Test]
-        public void MoneyBag_GetLatestAddedMoney_Success()
+        public void MoneyBag_CalculateMoneyInCurrency_Failure()
+        {
+            IMoneyBag bag = new MoneyBag();
+            IMoney money = new Money();
+            ICurrency currency = new Currency("EUR", "Euro");
+            bag.Invoking(x => x.CalculateMoneyInCurrency(currency)).ShouldThrow<NotImplementedException>().WithMessage("This is not implemented yet!");
+            
+        }
+
+        [Test]
+        public void MoneyBag_GetLatestDeposit_Success()
         {
             ICurrency eur = new Currency("EUR","Euro");
             ICurrency usd = new Currency("USD", "US dollar");
